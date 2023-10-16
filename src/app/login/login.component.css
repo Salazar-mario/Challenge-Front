@@ -1,0 +1,28 @@
+.split-screen {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.left-section {
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    flex: 1;
+    /* Establece un 50% del ancho para esta columna */
+}
+
+.right-section {
+    background-color: #2ecc71;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    /* Establece un 50% del ancho para esta columna */
+}
+
+.welcome-message {
+    font-size: 24px;
+    text-align: center;
+}
