@@ -2,7 +2,7 @@
     <div class="row split-screen">
         <div class="col-md-6 left-section">
             <div class="welcome-message">
-                <h1>Bienvenidos a Unicomer</h1>
+                <h1><span class="black-text">Bienvenidos a </span> <span class="blue-text">Unicomer</span></h1>
             </div>
         </div>
         <div class="col-md-6 right-section">
@@ -12,23 +12,19 @@
                         <div class="form-group">
                             <label for="dniType">Tipo de documento</label>
                             <select class="form-control" id="dniType" [(ngModel)]="dniType" name="dniType">
-                              <option value="DNI">DNI</option>
-                              <option value="Carné de Extranjería">Carné de Extranjería</option>
-                              <option value="Pasaporte">Pasaporte</option>
+                                <option value="DNI">DNI</option>
+                                <option value="Carné de Extranjería">Carné de Extranjería</option>
+                                <option value="Pasaporte">Pasaporte</option>
                             </select>
-                          </div>
-                          
+                        </div>
                         <div class="form-group">
                             <label for="dni">Número de documento</label>
                             <input type="text" class="form-control" id="dni" [(ngModel)]="dni" name="dni">
                         </div>
-
                         <div class="form-group">
                             <label for="password">Clave</label>
-                            <input type="password" class="form-control" id="password" [(ngModel)]="password"
-                                name="password">
+                            <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password">
                         </div>
-
                         <button type="submit" class="btn btn-primary" (click)="login()">Ingresar</button>
                     </form>
                 </div>
