@@ -19,3 +19,11 @@
 .dashboard-card-content {
   text-align: center;
 }
+
+/* Estilo para las tarjetas grandes */
+.big-card {
+  width: 900px; /* Cambia el ancho según tus preferencias */
+  height: 400px; /* Cambia la altura según tus preferencias */
+  /* Otros estilos personalizados para las tarjetas grandes */
+}
+
