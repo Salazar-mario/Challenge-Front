@@ -6,25 +6,35 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavigationComponent } from './navigation/navigation.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { RegistrationComponent } from './registration/registration.component';
+import { HomeComponent } from './home/home.component';
+import { SidenavComponent } from './sidebar/sidenav.component';
+import { BarTopComponent } from './bar-top/bar-top.component';
+import { StaditicComponent } from './staditic/staditic.component';
+import { ButtonLogComponent } from './button-log/button-log.component';
+import { TarjetComponent } from './tarjet/tarjet.component';
+import { UserHomeComponent } from './user-home/user-home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    NavigationComponent,
-    DashboardComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    HomeComponent,
+    SidenavComponent,
+    BarTopComponent,
+    StaditicComponent,
+    ButtonLogComponent,
+    TarjetComponent,
+    UserHomeComponent
   ],
   imports: [
     BrowserModule,

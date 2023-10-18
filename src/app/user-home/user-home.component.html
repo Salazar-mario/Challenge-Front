@@ -1,0 +1,17 @@
+<div class="grid-container">
+    <h1 class="title">Inicio</h1>
+    <div class="minicards-container">
+      <app-tarjet  *ngFor="let tarjeta of user.tarjetas" [tarjeta]="tarjeta"
+            [balance]="user.balance"> </app-tarjet>
+            <app-staditic titulo="Ingresos" balance="45,741" color="#252f69"></app-staditic>
+    <app-staditic titulo="Egresos" balance="32,123" color="#5D95BE"></app-staditic>
+    
+    </div>
+    <div class="chart-transactions-container">
+        <div class="chart-container">
+           
+        </div>
+    </div>
+    <div class="fees-container">
+    </div>
+</div>
