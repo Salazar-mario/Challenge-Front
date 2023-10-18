@@ -22,6 +22,12 @@ import { StaditicComponent } from './staditic/staditic.component';
 import { ButtonLogComponent } from './button-log/button-log.component';
 import { TarjetComponent } from './tarjet/tarjet.component';
 import { UserHomeComponent } from './user-home/user-home.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ChartComponent } from './chart/chart.component';
+import { paymentComponent } from './payment/payment.component';
+import { TransactionsComponent } from './transactions/transactions.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -34,12 +40,16 @@ import { UserHomeComponent } from './user-home/user-home.component';
     StaditicComponent,
     ButtonLogComponent,
     TarjetComponent,
-    UserHomeComponent
+    UserHomeComponent,
+    ChartComponent,
+    paymentComponent,
+    TransactionsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
@@ -48,7 +58,9 @@ import { UserHomeComponent } from './user-home/user-home.component';
     MatListModule,
     MatGridListModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    MatCheckboxModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,17 +1,25 @@
 <div class="grid-container">
     <h1 class="title">Inicio</h1>
     <div class="minicards-container">
-      <app-tarjet  *ngFor="let tarjeta of user.tarjetas" [tarjeta]="tarjeta"
-            [balance]="user.balance"> </app-tarjet>
-            <app-staditic titulo="Ingresos" balance="45,741" color="#252f69"></app-staditic>
-    <app-staditic titulo="Egresos" balance="32,123" color="#5D95BE"></app-staditic>
-    
+        <app-tarjet *ngFor="let tarjeta of user.tarjetas" [tarjeta]="tarjeta" [balance]="user.balance"> </app-tarjet>
+        <app-staditic titulo="Ingresos" balance="45,741" color="#252f69"></app-staditic>
+        <app-staditic titulo="Egresos" balance="32,123" color="#5D95BE"></app-staditic>
+
     </div>
     <div class="chart-transactions-container">
         <div class="chart-container">
-           
+            <mat-card class="text-balance">
+                Balance
+                <app-chart></app-chart>
+            </mat-card>
         </div>
+        <div class="transactions-container">
+        <mat-card class="text-transactions">Ultimas transacciones
+            <app-transactions *ngFor="let transaccion of user.transacciones"
+                [transaccion]="transaccion"></app-transactions></mat-card>
     </div>
-    <div class="fees-container">
-    </div>
+</div>
+<div class="fees-container">
+    <app-payment></app-payment>
+</div>
 </div>
