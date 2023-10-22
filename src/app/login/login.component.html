@@ -8,25 +8,41 @@
         <div class="col-md-6 right-section">
             <div class="card mt-5">
                 <div class="card-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="dniType">Tipo de documento</label>
-                            <select class="form-control" id="dniType" [(ngModel)]="dniType" name="dniType">
-                                <option value="DNI">DNI</option>
-                                <option value="Carné de Extranjería">Carné de Extranjería</option>
-                                <option value="Pasaporte">Pasaporte</option>
+                    <form #f="ngForm" (ngSubmit)="onLogin()" class="forms" novalidate>
+
+                        <div class="form-inputs">
+                            <label for="tipoDocumento">Tipo de documento</label>
+                            <select id="tipoDocumento" name="tipoDocumento" [(ngModel)]="tipoDocumento" required>
+                                <option *ngFor="let tipo of tiposDocumento" [value]="tipo">{{ tipo }}</option>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label for="dni">Número de documento</label>
-                            <input type="text" class="form-control" id="dni" [(ngModel)]="dni" name="dni">
+                        <div class="form-inputs">
+                            <label for="nroDocumento">Número de documento</label>
+                            <input type="text" id="nroDocumento" name="nroDocumento" [(ngModel)]="nroDocumento"
+                                required />
                         </div>
-                        <div class="form-group">
+                        <div class="form-inputs">
                             <label for="password">Clave</label>
-                            <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password">
+                            <input id="password" class="password-input" type="password" name="password"
+                                [(ngModel)]="password" required />
                         </div>
-                        <button type="submit" class="btn btn-primary" (click)="login()">Ingresar</button>
+
+                        <ul class="strength-list">
+                            <li>
+                                <span class="error"> {{errorMsj}} </span>
+                            </li>
+                        </ul>
+                        <div class="submit-button"><input type="submit" /></div>
+                        <div class="keyboard-container">
+                            <button class="keyboard">⌨ Teclado Virtual</button>
+                        </div>
+
                     </form>
+
+                    <div class="register">
+                        ¿No tienes cuenta? <a class="highlight" [routerLink]="['/register']">Regístrate aquí</a>
+
+                    </div>
                 </div>
             </div>
         </div>

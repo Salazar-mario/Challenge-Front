@@ -1,22 +1,58 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginUsuario } from 'src/model/login.model';
+import { AuthService } from 'src/service/auth.service';
+import { TokenService } from 'src/service/token.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
-  dniType: string = '';
-  dni: string = '';
-  password: string = '';
-  keyboardVisible: boolean = false; // Variable para controlar la visibilidad del teclado virtual
+export class LoginComponent implements OnInit {
+  isLogged = false;
+  isLogginFail= false;
+  loginUsuario!: LoginUsuario;
+  tipoDocumento!: string;
+  nroDocumento!: string;
+  password!: string;
+  roles: string[] = [];
+  errorMsj!: string;
+  /*podria ser obtenido por un service */
+  tiposDocumento = ['DNI', 'CEDULA', 'PASAPORTE', 'OTRO']; 
+  
+  constructor(
+    private tokenService: TokenService, private authService: AuthService, private router: Router) { }
 
-
-  login() {
-    // Aquí puedes agregar la lógica para enviar los datos de inicio de sesión al backend y manejar la respuesta.
+  ngOnInit(): void {
+    if(this.tokenService.getToken()){
+      this.isLogged = true
+      this.isLogginFail = false;
+      this.roles = this.tokenService.getAuthorities()
+    }
   }
-  toggleKeyboard() {
-    // Esta función se llama para alternar la visibilidad del teclado virtual
-    this.keyboardVisible = !this.keyboardVisible;
+
+  onLogin(): void {
+    this.loginUsuario = new LoginUsuario(this.tipoDocumento,parseInt(this.nroDocumento), this.password)
+       this.authService.login(this.loginUsuario).subscribe(data => {
+        
+          this.isLogged = true
+          this.isLogginFail = false
+          this.tokenService.setToken(data.token)
+          this.tokenService.setUsername(data.nroDocumento)
+          this.tokenService.setAuthorities(data.authorities)
+          this.roles = data.authorities
+          this.router.navigate([''])
+      },err => {
+          this.isLogged = false
+          this.isLogginFail = true
+          this.errorMsj =err.error.mensaje
+          
+          console.log(this.errorMsj)
+      })
+  }
+
+  goToRegister() {
+    this.router.navigate(['/register']); 
   }
 }

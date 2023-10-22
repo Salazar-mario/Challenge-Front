@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ButtonLogComponent } from './button-log.component';
+import { BartopComponent } from './bartop.component';
 
-describe('ButtonLogComponent', () => {
-  let component: ButtonLogComponent;
-  let fixture: ComponentFixture<ButtonLogComponent>;
+describe('BartopComponent', () => {
+  let component: BartopComponent;
+  let fixture: ComponentFixture<BartopComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ButtonLogComponent]
+      declarations: [BartopComponent]
     });
-    fixture = TestBed.createComponent(ButtonLogComponent);
+    fixture = TestBed.createComponent(BartopComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

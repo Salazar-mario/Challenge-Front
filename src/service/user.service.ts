@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { User } from 'src/app/../model/user.model';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  //URL = environment.URL + 'User/';
 
   URL = 'http://localhost:8080/user/';
   constructor(private httpClient: HttpClient) {}
@@ -17,8 +16,13 @@ export class UserService {
   }
 
   public details(id: number): Observable<User> {
-    return this.httpClient.get<User>(this.URL + `${id}`);
+    return this.httpClient.get<User>(this.URL + `${id}`).pipe(
+      tap((user: User) => {
+        console.log('Detalles del usuario:', user);
+      })
+    );
   }
+  
 
   public update(id: number, person: User): Observable<any> {
     return this.httpClient.put<any>(this.URL + `update/${id}`, person);
@@ -27,21 +31,10 @@ export class UserService {
   public transactions(id: number): Observable<any> {
     return this.httpClient.get<any>(this.URL + `${id}/transacciones`);
   }
+ 
 
-  /*
-    public delete(id: number): Observable<any>{
-      return this.httpClient.delete<any>(this.URL + `delete/${id}`)
-    }*/
-  /*
-    public save(ed: User): Observable<any>{
-      return this.httpClient.post<any>(this.URL + `create`, ed)
-    }*/
-
-  /*
-      {id}/agregarTarjeta")
-      {id}/depositarDinero")
-      {id}/extraerDinero")
-      {id}/transferir")
-
-    */
+  public hacerTransaccion(data: any): Observable<any> {
+    return this.httpClient.post(this.URL + '/realizarTransferencia', data);
+  }
+  
 }

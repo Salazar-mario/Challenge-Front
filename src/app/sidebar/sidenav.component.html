@@ -33,10 +33,11 @@
             <a mat-list-item href="/">
                 <mat-icon>help_outline</mat-icon>
                 Ayuda</a>
-        
-              <mat-icon>exit_to_app</mat-icon>
-                Cerrar Sesión
+            <a mat-list-item (click)="onLogOut()" *ngIf="isLogged">
+                <mat-icon>exit_to_app</mat-icon>
+                Cerrar Sesión</a>
         </mat-nav-list>
+
     </mat-sidenav>
     <mat-sidenav-content>
         <mat-toolbar color="primary" class="custom-toolbar">
@@ -63,6 +64,7 @@
             </div>
 
             <div class="toolbar-right">
+                <app-bartop></app-bartop>
             </div>
         </mat-toolbar>
         <app-user-home></app-user-home>

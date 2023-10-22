@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from 'src/service/user.service';
 
 @Component({
   selector: 'app-transactions',
@@ -6,9 +8,23 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./transactions.component.css'],
 })
 export class TransactionsComponent implements OnInit {
+  showTransactionModal = false;
+submitTransaction() {
+throw new Error('Method not implemented.');
+}
   @Input() transaccion: any;
+  transactionForm: FormGroup;
 
-  constructor() {}
+  constructor(private formBuilder: FormBuilder, public userService:UserService) {
+    this.transactionForm = this.formBuilder.group({
+      monto: ['', [Validators.required, Validators.min(0.01)]],
+      tipo: ['', Validators.required],
+      fecha: ['', Validators.required],
+      usuario_id: ['', Validators.required],
+      usuario_destinatario_id: ['', Validators.required],
+      estado: ['', Validators.required],
+    });
+  }
 
   ngOnInit(): void {}
 
@@ -49,6 +65,7 @@ export class TransactionsComponent implements OnInit {
 
     return { clase, icono };
   }
+  
   getTextColor(estado: string): string {
     switch (estado) {
       case 'Completado':
@@ -61,5 +78,22 @@ export class TransactionsComponent implements OnInit {
         return 'black'; 
     }
   }
-}
 
+
+  test(){
+    this.transactionForm.get("fecha")?.setValue(new Date())
+    console.log("DATOS:",this.transactionForm.value);
+  }
+
+  realizarTransaccion(){
+this.userService.hacerTransaccion(this.transactionForm.value)
+  }
+  openTransactionModal() {
+    this.showTransactionModal = true;
+  }
+
+  closeTransactionModal() {
+    this.showTransactionModal = false;
+  }
+  
+}

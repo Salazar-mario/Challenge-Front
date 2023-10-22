@@ -1,41 +1,50 @@
 import { Component, OnInit } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { User } from 'src/model/user.model';
 import { TokenService } from 'src/service/token.service';
 import { UserService } from 'src/service/user.service';
 
 @Component({
-  selector: 'app-sidebar',
-  templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.css'],
+  selector: 'app-login-button',
+  templateUrl: './login-button.component.html',
+  styleUrls: ['./login-button.component.css']
 })
-export class SidenavComponent implements OnInit {
+export class LoginButtonComponent implements OnInit {
+  user: User = new User('', '', 0, [], [], 0);
   isLogged = false;
-  isHandset$: Observable<boolean> = this.breakpointObserver
-    .observe(Breakpoints.Handset)
-    .pipe(
-      map((result) => result.matches),
-      shareReplay()
-    );
 
   constructor(
-    private breakpointObserver: BreakpointObserver,
     private router: Router,
     private tokenService: TokenService,
     public userService: UserService
   ) {}
 
   ngOnInit(): void {
+    this.cargarPersona();
     if (this.tokenService.getToken()) {
       this.isLogged = true;
     } else {
       this.isLogged = false;
     }
   }
+
   onLogOut(): void {
     this.tokenService.logOut();
+    window.location.reload();
+  }
+
+  login() {
     this.router.navigate(['/login']);
+  }
+  
+  cargarPersona() {
+    this.userService.details(1).subscribe(
+      (data) => {
+        this.user = data;
+      },
+      (error) => {
+        console.log('Error al cargar el usuario', error);
+      }
+    );
   }
 }

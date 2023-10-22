@@ -9,17 +9,17 @@
     <div class="chart-transactions-container">
         <div class="chart-container">
             <mat-card class="text-balance">
-                Balance
+                <div class="custom-balance-text">Balance</div>
                 <app-chart></app-chart>
             </mat-card>
         </div>
         <div class="transactions-container">
-        <mat-card class="text-transactions">Ultimas transacciones
-            <app-transactions *ngFor="let transaccion of user.transacciones"
-                [transaccion]="transaccion"></app-transactions></mat-card>
+            <mat-card class="text-transactions">Ultimas transacciones
+                <app-transactions *ngFor="let transaccion of user.transacciones"
+                    [transaccion]="transaccion"></app-transactions></mat-card>
+        </div>
     </div>
-</div>
-<div class="fees-container">
-    <app-payment></app-payment>
-</div>
+    <div class="fees-container">
+        <app-payment></app-payment>
+    </div>
 </div>

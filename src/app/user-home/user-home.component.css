@@ -33,6 +33,7 @@
     grid-gap: 15px;
     margin: 5px;
     width: 90%;
+    height: 80%;
   }
   
   .chart-container,
@@ -47,14 +48,20 @@
   }
   
   .text-balance {
-    font-weight: 500;
-    font-size: 1.2rem;
+    font-weight: 380;
+    font-size: 1.6rem;
     margin-bottom: 2rem;
   }
   mat-card {
     border-radius: 2rem;
   }
-  
+  .custom-balance-text {
+    /* Estilo para el texto "Balance" */
+    font-size: 24px;
+    font-weight:bolder ;
+    margin-left: 9rem;
+    /* Otros estilos para el texto */
+}
   /* Responsive styles */
   @media screen and (max-width: 768px) {
     .minicards-container {

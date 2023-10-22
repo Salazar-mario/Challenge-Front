@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -17,9 +17,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { RegistrationComponent } from './registration/registration.component';
 import { HomeComponent } from './home/home.component';
 import { SidenavComponent } from './sidebar/sidenav.component';
-import { BarTopComponent } from './bar-top/bar-top.component';
 import { StaditicComponent } from './staditic/staditic.component';
-import { ButtonLogComponent } from './button-log/button-log.component';
 import { TarjetComponent } from './tarjet/tarjet.component';
 import { UserHomeComponent } from './user-home/user-home.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -28,7 +26,10 @@ import { paymentComponent } from './payment/payment.component';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatTableModule } from '@angular/material/table';
-
+import { BartopComponent } from './bartop/bartop.component';
+import { LoginButtonComponent } from './login-button/login-button.component';
+import { interceptorProvider } from 'src/service/interceptor.service';
+import { NgChartsModule } from 'ng2-charts';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,33 +37,34 @@ import { MatTableModule } from '@angular/material/table';
     RegistrationComponent,
     HomeComponent,
     SidenavComponent,
-    BarTopComponent,
     StaditicComponent,
-    ButtonLogComponent,
     TarjetComponent,
     UserHomeComponent,
     ChartComponent,
     paymentComponent,
-    TransactionsComponent
+    TransactionsComponent,
+    BartopComponent,
+    LoginButtonComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    AppRoutingModule,
+    ReactiveFormsModule,
     HttpClientModule,
+    AppRoutingModule,
+    FormsModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
     MatGridListModule,
     MatCardModule,
+    MatIconModule,
     MatMenuModule,
+    NgChartsModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatListModule,
+    MatTableModule,
     MatCheckboxModule,
-    MatTableModule
   ],
-  providers: [],
+  providers: [interceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

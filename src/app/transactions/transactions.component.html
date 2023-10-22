@@ -19,6 +19,32 @@
                     {{transaccion.estado}}
                 </td>
             </tr>
+            <td>
+            </td>
+
         </tbody>
     </table>
 </div>
+<div>
+    <form [formGroup]="transactionForm" (ngSubmit)="submitTransaction()">
+        <div>
+            <label for="remitente">Remitente:</label>
+            <input type="number" id="usuario_id" formControlName="usuarioRemitente_id">
+        </div>
+        <div>
+            <label for="destinatario">Destinatario:</label>
+            <input type="number" id="usuarioDestinatario_id" formControlName="usuarioDestinatario_id">
+        </div>
+        <div>
+            <label for="monto">Monto:</label>
+            <input type="number" id="monto" formControlName="monto">
+        </div>
+        <div>
+            <label for="estado">Estado:</label>
+            <input type="text" id="estado" formControlName="estado">
+        </div>
+
+
+        <button (click)="realizarTransaccion()">Realizar Transacción</button>
+    </form>
+</div> 
