@@ -15,10 +15,10 @@ export class TarjetComponent implements OnInit {
   ngOnInit(): void {
   }
   ocultarNumeroTarjeta(numero: string): string {
-    const numeroVisible = numero.trim().replace(/\s/g, ''); // Remover espacios en blanco
+    const numeroVisible = numero.trim().replace(/\s/g, ''); 
     const ultimosCuatroDigitos = numeroVisible.slice(-4);
-    const gruposAnteriores = numeroVisible.slice(0, -4).replace(/\d/g, '*'); // Reemplazar dígitos por asteriscos
-    const gruposOcultos = gruposAnteriores.replace(/(.{4})/g, '$1 '); // Agregar espacio después de cada grupo de 4 caracteres
+    const gruposAnteriores = numeroVisible.slice(0, -4).replace(/\d/g, '*'); 
+    const gruposOcultos = gruposAnteriores.replace(/(.{4})/g, '$1 '); 
     return gruposOcultos + ultimosCuatroDigitos;
   }
    convertirFecha(fecha: number[]): string {

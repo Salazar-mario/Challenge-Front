@@ -14,16 +14,16 @@ export class UserHomeComponent implements OnInit {
     '1234 5678 9012 3456',
     [2025, 11, 1],
     '123',
-    'John Doe'
+    'Juan Delgadillo'
   );
 
-  sender = new User('John', 'Doe', 0, [], [], 0);
-  recipient = new User('Jane', ' Smith', 0, [], [], 0);
+  sender = new User('Juan', 'Delgadillo', 0, [], [], 0);
+  recipient = new User('Lara', 'Arroyo', 0, [], [], 0);
 
   transaccion = new Transaccion(
     1000,
     'ingreso',
-    [2023, 7, 18, 16, 44, 49, 901486000],
+    [2023, 7, 18, 16, 44, 49, 901476000],
     this.sender,
     this.recipient,
     "Pendiente",               
@@ -33,7 +33,7 @@ export class UserHomeComponent implements OnInit {
   transaccion2 = new Transaccion(
     500,
     'egreso',
-    [2023, 7, 18, 16, 44, 49, 901486000],
+    [2023, 7, 18, 16, 44, 49, 954686600],
     this.sender,
     this.recipient,
     "Cancelado",               

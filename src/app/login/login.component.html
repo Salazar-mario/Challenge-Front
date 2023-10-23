@@ -9,42 +9,36 @@
             <div class="card mt-5">
                 <div class="card-body">
                     <form #f="ngForm" (ngSubmit)="onLogin()" class="forms" novalidate>
-
-                        <div class="form-inputs">
-                            <label for="tipoDocumento">Tipo de documento</label>
-                            <select id="tipoDocumento" name="tipoDocumento" [(ngModel)]="tipoDocumento" required>
+                        <div class="mb-3">
+                            <label for="tipoDocumento" class="form-label">Tipo de documento</label>
+                            <select id="tipoDocumento" name="tipoDocumento" [(ngModel)]="tipoDocumento"
+                                class="form-select" required>
                                 <option *ngFor="let tipo of tiposDocumento" [value]="tipo">{{ tipo }}</option>
                             </select>
                         </div>
-                        <div class="form-inputs">
-                            <label for="nroDocumento">Número de documento</label>
+                        <div class="mb-3">
+                            <label for="nroDocumento" class="form-label">Número de documento</label>
                             <input type="text" id="nroDocumento" name="nroDocumento" [(ngModel)]="nroDocumento"
-                                required />
+                                class="form-control" required />
                         </div>
-                        <div class="form-inputs">
-                            <label for="password">Clave</label>
-                            <input id="password" class="password-input" type="password" name="password"
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Clave</label>
+                            <input id="password" class="form-control" type="password" name="password"
                                 [(ngModel)]="password" required />
                         </div>
-
-                        <ul class="strength-list">
-                            <li>
-                                <span class="error"> {{errorMsj}} </span>
-                            </li>
-                        </ul>
-                        <div class="submit-button"><input type="submit" /></div>
-                        <div class="keyboard-container">
-                            <button class="keyboard">⌨ Teclado Virtual</button>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-primary">Enviar</button>
                         </div>
-
                     </form>
-
-                    <div class="register">
-                        ¿No tienes cuenta? <a class="highlight" [routerLink]="['/register']">Regístrate aquí</a>
-
-                    </div>
+                    <div class="container mt-4">
+                        <div class="row">
+                            <div class="col text-center register" >
+                                ¿No tienes una cuenta? <a class="black-text" [routerLink]="['/register']">Regístrate aquí</a>
+                            </div>
+                        </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+

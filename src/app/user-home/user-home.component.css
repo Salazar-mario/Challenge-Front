@@ -1,117 +1,118 @@
 .grid-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
-  }
-  
-  .grid-container > * {
-    padding: 10px;
-  }
-  
-  .title {
-    font-weight: 500;
-    font-size: 1.5rem;
-    padding: 15px;
-    align-self: flex-start;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+}
+
+.grid-container > * {
+  padding: 10px;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 1.5rem;
+  padding: 15px;
+  align-self: flex-start;
+}
+
+.minicards-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin: 10px;
+  align-items: center;
+}
+.fees-container {
+  width: 90%;
+}
+
+.chart-transactions-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 15px;
+  margin: 5px;
+  width: 90%;
+  height: 80%;
+}
+
+.chart-container,
+.transactions-container {
+  grid-column: span 1;
+}
+
+.text-transactions {
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.text-balance {
+  font-weight: 380;
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+mat-card {
+  border-radius: 2rem;
+}
+.custom-balance-text {
+  font-size: 24px;
+  font-weight:bolder ;
+  margin-left: 9rem;
+}
+@media screen and (max-width: 768px) {
   .minicards-container {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: center;
+  }
+
+  .minicards-container > * {
     margin: 10px;
-    align-items: center;
   }
-  .fees-container {
-    width: 90%;
+
+  .chart-transactions-container {
+    grid-template-columns: 1fr;
   }
-  
+}
+
+@media screen and (max-width: 480px) {
+  .text-transactions,
+  .text-balance{
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .fees-container{
+    width: auto;
+    
+  }
+
+}
+@media screen and (max-width: 320px) {
+  .title {
+    margin-left: 0; 
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .text-transactions,
+  .text-balance{
+    font-size: 0.8rem;
+    margin-bottom: 0.3rem;
+  }
+  .title{
+    margin-left: 35px !important;
+  }
   .chart-transactions-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 15px;
-    margin: 5px;
-    width: 90%;
-    height: 80%;
+    align-content: center;
+    justify-content: center;
   }
-  
-  .chart-container,
-  .transactions-container {
-    grid-column: span 1;
+
+  .grid-container {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    padding: 25px;
   }
-  
-  .text-transactions {
-    font-weight: 500;
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-  }
-  
-  .text-balance {
-    font-weight: 380;
-    font-size: 1.6rem;
-    margin-bottom: 2rem;
-  }
-  mat-card {
-    border-radius: 2rem;
-  }
-  .custom-balance-text {
-    /* Estilo para el texto "Balance" */
-    font-size: 24px;
-    font-weight:bolder ;
-    margin-left: 9rem;
-    /* Otros estilos para el texto */
 }
-  /* Responsive styles */
-  @media screen and (max-width: 768px) {
-    .minicards-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-  
-    .minicards-container > * {
-      margin: 10px;
-    }
-  
-    .chart-transactions-container {
-      grid-template-columns: 1fr;
-    }
-  }
-  
-  @media screen and (max-width: 480px) {
-    .text-transactions,
-    .text-balance{
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-    }
-    .fees-container{
-      width: auto;
-      
-    }
-  
-  }
-  
-  @media screen and (max-width: 320px) {
-    .text-transactions,
-    .text-balance{
-      font-size: 0.8rem;
-      margin-bottom: 0.3rem;
-    }
-    .title{
-      margin-left: 35px !important;
-    }
-    .chart-transactions-container {
-      display: grid;
-      align-content: center;
-      justify-content: center;
-    }
-  
-    .grid-container {
-      display: grid;
-      align-content: center;
-      justify-content: center;
-      padding: 25px;
-    }
-  }
-  

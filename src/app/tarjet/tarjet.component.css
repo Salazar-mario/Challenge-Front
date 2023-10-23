@@ -1,64 +1,61 @@
-
 .tarjeta {
-    background-color: #692a25;
-    width: 21rem;
-    height: 13rem;
-    border-radius: 2rem;
-    color: #ffffff;
-    padding-inline: 1rem;
-    padding-block: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  background-color: #692a25;
+  width: 21rem;
+  height: 13rem;
+  border-radius: 2rem;
+  color: #ffffff;
+  padding-inline: 1rem;
+  padding-block: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
 
-  }
-  .info-text {
-    font-size: 0.7rem;
-  }
-  
-  .saldo-info {
-    font-size: 1.3rem;
-  }
-  
-  .numero-tarjeta {
-    margin-left: 60%;
-    font-size: 1rem;
-  }
-  
-  .contenedor-info-abajo {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-  }
-  
-  .info-tarjeta {
-    font-size: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  .contenedor-arriba {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .circulo1 {
-    background-color: #ffffff;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 100vh;
-    position: relative;
-    filter: opacity(0.9);
-  }
-  
-  .circulo2 {
-    background-color: #ffffff;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 100vh;
-    position: absolute;
-    filter: opacity(0.4);
-    right: 55%;
-  }
+}
+
+.info-text {
+  font-size: 0.7rem;
+}
+
+.saldo-info {
+  font-size: 1.3rem;
+}
+
+.numero-tarjeta {
+  font-size: 1rem;
+}
+
+.contenedor-info-abajo {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.info-tarjeta {
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contenedor-arriba {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-between;
+}
+
+.circulo1, .circulo2 {
+  background-color: #ffffff;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100vh;
+  position: relative;
+  filter: opacity(0.9);
+}
+
+.circulo2 {
+  position: absolute;
+  right: 55%;
+  filter: opacity(0.4);
+}
