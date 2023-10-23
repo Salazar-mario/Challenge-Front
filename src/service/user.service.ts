@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { User } from 'src/app/../model/user.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.prod';
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
 
-  URL = 'https://challengebackend.onrender.com/user';
+  URL = environment.URL + 'auth/';
   constructor(private httpClient: HttpClient) {}
 
   public usuarios(): Observable<User[]> {
@@ -16,7 +16,7 @@ export class UserService {
   }
 
   public details(id: number): Observable<User> {
-    return this.httpClient.get<User>(this.URL + `${id}`).pipe(
+    return this.httpClient.get<User>(this.URL + `usuarios/${id}`).pipe(
       tap((user: User) => {
         console.log('Detalles del usuario:', user);
       })
