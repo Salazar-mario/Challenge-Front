@@ -10,7 +10,6 @@ import { Transaccion } from 'src/app/../model/transacciones.model';
   styleUrls: ['./user-home.component.css'],
 })
 export class UserHomeComponent implements OnInit {
-  //modelos Hardcodeados por si no levantan el backend y solo ven el challenge front
   tarjeta: Tarjeta = new Tarjeta(
     '1234 5678 9012 3456',
     [2025, 11, 1],
