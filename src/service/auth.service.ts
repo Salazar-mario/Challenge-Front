@@ -10,7 +10,7 @@ import { JwtDto } from '../model/jwt-dto.model';
   providedIn: 'root',
 })
 export class AuthService {
-  authURL = 'https://challengebackend.onrender.com/auth/';
+  authURL = 'https://challengebackend.onrender.com/auth';
   
   constructor(private httpClient: HttpClient) {}
 

@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 })
 export class UserService {
 
-  URL = 'https://challengebackend.onrender.com/user/';
+  URL = 'https://challengebackend.onrender.com/user';
   constructor(private httpClient: HttpClient) {}
 
   public usuarios(): Observable<User[]> {
