@@ -14,9 +14,11 @@
             </mat-card>
         </div>
         <div class="transactions-container">
-            <mat-card class="text-transactions">Ultimas transacciones
+            <mat-card class="text-transactions">
+                <h3 class="transactions-title">Últimas transacciones</h3>
                 <app-transactions *ngFor="let transaccion of user.transacciones"
-                    [transaccion]="transaccion"></app-transactions></mat-card>
+                    [transaccion]="transaccion"> </app-transactions>
+            </mat-card>
         </div>
     </div>
     <div class="fees-container">

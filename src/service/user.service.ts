@@ -33,8 +33,12 @@ export class UserService {
   }
  
 
+ 
   public hacerTransaccion(data: any): Observable<any> {
     return this.httpClient.post(this.URL + '/realizarTransferencia', data);
   }
   
 }
+  
+  
+  

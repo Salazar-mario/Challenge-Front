@@ -1,116 +1,68 @@
-.grid-container {
+.fecha-hora {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background-color: gainsboro;
+    align-items: flex-start;
+}
+.fecha-hora span {
+    font-size: 15px;
+}
+.fecha-hora small {
+    color: grey;
+    font-size: 12px;
 }
 
-.grid-container>* {
-    padding: 10px;
-}
-
-.title {
-    font-weight: 500;
-    font-size: 1.5rem;
-    padding: 15px;
-    align-self: flex-start;
-}
-
-.minicards-container {
+.transactions-table {
     display: flex;
-    flex-wrap: nowrap;
     justify-content: center;
-    margin: 10px;
-    align-items: center;
 }
 
-.fees-container {
-    width: 90%;
-}
-
-.chart-transactions-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 15px;
-    margin: 5px;
-    width: 90%;
-}
-
-.chart-container,
-.transactions-container {
-    grid-column: span 1;
-}
-
-.text-transactions {
-    font-weight: 500;
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-}
-
-.text-balance {
-    font-weight: 500;
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-}
-
-mat-card {
-    border-radius: 2rem;
-}
-
-/* Responsive styles */
-@media screen and (max-width: 768px) {
-    .minicards-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .minicards-container>* {
-        margin: 10px;
-    }
-
-    .chart-transactions-container {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media screen and (max-width: 480px) {
-
-    .text-transactions,
-    .text-balance {
-        font-size: 1rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .fees-container {
-        width: auto;
-
-    }
+.table-layout {
+    table-layout: fixed;
 
 }
 
-@media screen and (max-width: 320px) {
+.table-layout td {
+    text-align: center;
+    padding: 3.1px;
+}
 
-    .text-transactions,
-    .text-balance {
-        font-size: 0.8rem;
-        margin-bottom: 0.3rem;
-    }
+.circle {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: relative;
+}
 
-    .title {
-        margin-left: 35px !important;
-    }
+.circle mat-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)rotate(45deg);
+    color: white;
+}
 
-    .chart-transactions-container {
-        display: grid;
-        align-content: center;
-        justify-content: center;
-    }
+.saliente-transaction .circle {
+    background-color: #EC595B;
+}
 
-    .grid-container {
-        display: grid;
-        align-content: center;
-        justify-content: center;
-        padding: 25px;
-    }
+.entrante-transaction .circle {
+    background-color: #4BA38D;
+}
+
+.estado {
+    font-size: 19px;
+}
+
+.custom-button {
+    background-color: #4BA38D;
+    color: #ffffff;
+    border: none;
+    padding: 5px 5px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.custom-button:hover {
+    background-color: #3B896D;
 }

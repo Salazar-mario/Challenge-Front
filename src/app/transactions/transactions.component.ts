@@ -17,12 +17,12 @@ throw new Error('Method not implemented.');
 
   constructor(private formBuilder: FormBuilder, public userService:UserService) {
     this.transactionForm = this.formBuilder.group({
-      monto: ['', [Validators.required, Validators.min(0.01)]],
+      cantidad: ['', [Validators.required, Validators.min(0.01)]],
       tipo: ['', Validators.required],
       fecha: ['', Validators.required],
       usuario_id: ['', Validators.required],
       usuario_destinatario_id: ['', Validators.required],
-      estado: ['', Validators.required],
+      motivo: ['', Validators.required],
     });
   }
 
@@ -66,19 +66,7 @@ throw new Error('Method not implemented.');
     return { clase, icono };
   }
   
-  getTextColor(estado: string): string {
-    switch (estado) {
-      case 'Completado':
-        return '#4BA38D'; 
-      case 'Cancelado':
-        return '#EC595B'; 
-      case 'Pendiente':
-        return 'grey'; 
-      default:
-        return 'black'; 
-    }
-  }
-
+  
 
   test(){
     this.transactionForm.get("fecha")?.setValue(new Date())

@@ -27,7 +27,8 @@ export class UserHomeComponent implements OnInit {
     [2023, 7, 18, 16, 44, 49, 901486000],
     this.sender,
     this.recipient,
-    'Pendiente'
+    "Pendiente",               
+
   );
 
   transaccion2 = new Transaccion(
@@ -36,7 +37,8 @@ export class UserHomeComponent implements OnInit {
     [2023, 7, 18, 16, 44, 49, 901486000],
     this.sender,
     this.recipient,
-    'Cancelado'
+    "Cancelado",               
+
   );
 
   user: User = new User(
